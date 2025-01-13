@@ -7,5 +7,6 @@ class PagesConfig(AppConfig):
     Он наследуется от AppConfig и используется Django для управления
     настройками приложения.
     """
+    
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'pages'
