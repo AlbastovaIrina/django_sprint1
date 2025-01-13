@@ -51,14 +51,14 @@ posts: list[dict[str, Union[int, str]]] = [
 main_posts = {post['id']: post for post in posts}
 
 
-#Функция представления для главной страницы блога.
-def index(request): 
+# Функция представления для главной страницы блога.
+def index(request):
     template_name = 'blog/index.html'
     context = {'posts': posts[::-1]}
     return render(request, template_name, context)
 
 
-#Функция представления для детальной страницы поста.
+# Функция представления для детальной страницы поста.
 def post_detail(request, post_id):
     template_name = 'blog/detail.html'
     if post_id not in main_posts:
@@ -67,7 +67,7 @@ def post_detail(request, post_id):
     return render(request, template_name, context)
 
 
-#Функция представления для страницы постов определенной категории.
+# Функция представления для страницы постов определенной категории.
 def category_posts(request, category_slug):
     template_name = 'blog/category.html'
     context = {'category': category_slug}
